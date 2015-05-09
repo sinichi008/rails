@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Eklabus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eklabus.each do |eklabus| %>
+      <tr>
+        <td><%= eklabus.name %></td>
+        <td><%= eklabus.address %></td>
+        <td><%= link_to 'Show', eklabus %></td>
+        <td><%= link_to 'Edit', edit_eklabus_path(eklabus) %></td>
+        <td><%= link_to 'Destroy', eklabus, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Eklabu', new_eklabus_path %>
